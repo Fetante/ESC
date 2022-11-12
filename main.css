@@ -590,15 +590,12 @@ footer {
     }
 
     .footer-info{
-        width: 40%;
-       
-    }
-    
+        width: 40%;       
+    }    
 }
 
 .footer-info{
-    margin-left: 15px;
-    
+    margin-left: 15px;    
 }
 
 footer a{
@@ -617,8 +614,6 @@ footer h3,h4,h5{
     margin-top: 1.5rem;
     margin-bottom:0.7rem;
 }
-
-
 
 .footer-site-map{
     margin-left:15px;
