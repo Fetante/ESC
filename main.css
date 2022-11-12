@@ -7,23 +7,16 @@ html{
     font-size:62.5%
 }
 
-body{
+body{    
     background-color: #FFF;
     font-family: 'Roboto', sans-serif;
-    margin:0px;       
-    
-    
-   
+    margin:0px;     
 }
 
 .container{
     display: flex;
     flex-direction: column;
-    margin: 0px;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 0;
-    
+    margin: 0px;  
 }
 
 header{
@@ -33,17 +26,13 @@ header{
 }
 
 li{
-    font-size: 1.2vw;
+    font-size: 1.5rem;
     margin-top: 1%;
 }
 
 .header-banner{
     display: flex;
-    font-family: 'Roboto';
-    font-style: normal;
-    margin-bottom: 0%;
-    padding-bottom: 0%;
-    align-items: center;
+    
 }
 
 .header-site{
@@ -52,6 +41,22 @@ li{
     margin-top: 20px;
     margin-left: 1vh;
     text-align: center;
+}
+
+@media screen and (min-width: 950px) {
+    .header-site{
+        display:flex;
+        font-size: 3rem;
+        width: 25ch;
+        padding-left: 0;
+        text-align:left;
+        margin-bottom: 0; 
+    }
+
+    .header-banner{
+        margin: 2px 10px;        
+    }
+    
 }
 
 .header-logo{
@@ -73,28 +78,118 @@ li{
     width: 100%;
 }
 
-ul{
-    display: flex;
-    flex-direction: row;
-}
-.header-links{
-    color: white;
-    margin: 0;
-    padding: 0;
+.header-links{   
     margin-bottom: 20px;
     justify-content: space-evenly;
     list-style: none;
     text-align: center;
-    font-weight: 700
+    font-weight: 700;
+    display: none;
+}
+
+.nav-link{
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.hamburger{
+    cursor: pointer;
+}
+
+@media screen and (min-width: 950px){
+    .header-links{
+        display: flex;        
+    }
+    .hamburger{
+        display:none;
+        cursor: pointer;
+    }
+}
+
+.bar{
+    display: block;
+    width: 4em;
+    height: .5em;
+    margin: .5em 0;    
+    background-color: white;
+}
+    
+.hamburger.active .bar:nth-child(2){  /* Mellersta burgaren ska inte synas vid 'active'-mode*/
+    opacity: 0;
+}
+.hamburger.active .bar:nth-child(1){  /* Översta burgaren  */
+    transform: translateY(8px) rotate(45deg);
+    position: absolute;
+    z-index: 3 !important;
+}
+.hamburger.active .bar:nth-child(3){  /* Understa burgaren  */
+    transform: translateY(-2px) rotate(-45deg);
+    position: absolute;
+    z-index: 3 !important;
+}
+
+/* Menyn syns bara i mobilt läge*/
+@media screen and (max-width: 950px){
+    .header-links.active{
+        position:absolute;
+        display: flex;
+        flex-direction: column;
+        transition: 0.3s;
+        top: 20px;
+        right: 20px;
+        bottom: 20px;
+        left: 20px;         
+        background-color: #011827;        
+        animation: fade-in 0.3s both;
+        animation-delay: 0.2s;
+        z-index: 2;
+    }
+}
+
+.frost.active{
+    animation: frost-anim 0.2s forwards;
+    background: rgba(255, 255, 255, 0.5);
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+@keyframes frost-anim{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in{
+    0%{
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 figure{
     margin: 0px;
     padding: 0px;
+    
 }
 
 .hacker-main{
     width: 100%;
+    max-height: 80vh;
     
 }
 
@@ -116,14 +211,12 @@ figure{
     background-color: #8ACFE5;
     color: #011827;
     font-weight: 700;
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 20vh;
-    height: 66px;
+    font-size: 2.4rem;
+    max-width: 350px;    
+    padding: 20px 50px;
     margin-bottom: 30px; 
-    text-decoration: none;   
+    text-decoration: none;
+    border-radius: 5px;
 }
 
 .online-challenges{
@@ -135,11 +228,66 @@ figure{
     margin-bottom: 67px;
 }
 
+@media screen and (min-width: 950px){
+    .challenges{
+        flex-direction: row-reverse;
+        justify-content: center;
+        gap: 20px;  
+        position: relative;        
+    }
+
+    .online-challenges{ 
+    background-color: #E3170A;
+    color: white;
+    font-weight: 700;
+    font-size: 2.4rem;
+    max-width: 350px;    
+    padding: 20px 50px;
+    margin-bottom: 30px; 
+    text-decoration: none;
+    border-radius: 5px;
+    line-height: 29px;
+    bottom: 80px;        
+    position: relative;
+    }
+
+    .site-challenges{
+        bottom: 80px;
+        position: relative;
+    }
+}
+
+.quotes{
+    margin-bottom:50px;
+}
+
+@media screen and (min-width: 950px){
+    .quotes{
+        display: flex;
+        margin: 100px;
+        justify-content: space-around;
+    }
+
+    .quote:nth-child(2){
+        display:flex !important;
+    }
+
+    .quote{
+        display: flex;
+    }    
+}
+
 .quote{
     display: flex;
-    flex-direction: row;
-    align-items: top;
 }
+
+
+/* Don't display the second quote */
+
+.quote:nth-child(2){
+    display: none;
+}
+
 
 .photo-img{    
     width: 73.34px;
@@ -151,18 +299,18 @@ figure{
 }
 
 .quote-john-doe{
-font-style: italic;
-font-weight: 400;
-font-size: 24px;
-line-height: 28px;
-color: #000000;
-padding:0px;
-margin: 0px;    
+    font-style: italic;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+    padding:0px;
+    margin: 0px;    
 }
 
-.person-quote{
-    padding-left:110px;
+.person-quote{    
     margin:5px;
+    font-size: 1.8rem;
 }
 
 h2{
@@ -176,22 +324,29 @@ h2{
     align-content: space-between;
     overflow: scroll;
     padding: 30px 15px;
+}
 
+@media screen and (min-width: 1200px){
+    .pop-cards-container{
+        overflow: auto;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .pop-card{
-    min-width: 50vh;
+    min-width:350px;
     width: 363px;
-    height: 480px;
-    margin: 0 15px;
+    height: 450px;
+    margin: 0 20px;
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0px 0px 25px rgba(17, 17, 17, 0.5); /* horizonal vertical blur(size) */
 }
 
 .small-hacker img{    
-    max-width: 400px;
-    max-height: 250px;
+    width: 100%;
+    height: 50%;
 }
 
 .pop-card img{
@@ -229,8 +384,7 @@ h2{
 .pop-card-book{
     float: right;
     margin-right: 1.5rem;
-    margin-top: 1rem;
-   
+    margin-top: 1rem;   
 }
 
 .pop-card button{
@@ -242,79 +396,235 @@ h2{
     width: 20rem;
     height: 44px;
     border: none;
-
 }
 
-/* Vidd full screen
-.participants{
-    float: right;
-    font-size: 1.4rem;
-    margin-right: 5px;
-}
-*/
-
-/* .popular-challenges{
-    justify-items: center;
-    display:flex;    
-    border: 2px solid green;
+.site-challenges-lower{
+    background-color: #8ACFE5;
+    color: #011827;
+    font-weight: 700;
+    font-size: 2.4rem;
+    max-width: 350px;    
+    padding: 20px 50px;
+    margin-bottom: 30px; 
+    text-decoration: none;
+    border-radius: 5px;
 }
 
-.room_holding{
+.online-challenges-lower{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-decoration: underline;
+    color: #36769D;
+    margin-bottom: 67px;
+}
+
+@media screen and (min-width:950px){
+    .online-challenges-lower{ 
+        background-color: #E3170A;
+        color: white;
+        font-weight: 700;
+        font-size: 2.4rem;
+        max-width: 350px;    
+        padding: 20px 50px;
+        margin-bottom: 30px; 
+        text-decoration: none;
+        border-radius: 5px;
+        line-height: 29px;               
+        position: relative;
+        }
+}
+
+.story{
     display: flex;
-    overflow: scroll;
-    justify-items: center;
-    margin-bottom: 60px;
+    flex-direction: column;
+    background-color: #011827;
+    color: white;
+    align-items: center;
+    font-size: 1.6rem;
     text-align: center;
-}
-
-.room-cards{
-    display: flex;
-    margin:auto;
-    padding:0 30px;
-}
-
-.room-card{
-    height: 446px;
-    width: 363px;
-    border-radius: 8px;
-}
-
-.first_img{
-    width: 186px;
-    height: 223px;;
-    border-radius: 8px 8px 0px 0px;;
-    
-} */
-/*
-.popular-challenges{
-    border-radius: 15px;
-    display:flex;
-}
-
-.header-popular-challenges {
-    margin-left: 50px;
-    width: 100%;
-    height:100%;
+    padding: 4rem 2rem;
+    font-size: 28px;
     font-weight: 400;
-    font-size: 32px;
-    line-height: 38px;
+    line-height: 33px;
+    height: 50vmax;
+    justify-content: center;
+    max-height: 550px;
+    min-height: 450px;
+}
+
+@media screen and (min-width: 950px){
+    .story{
+        margin-top: 100px;
+    }
+}
+
+.story a{
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #8ACFE6;
+    border: 2px solid #8ACFE6;    
+    text-align: center;
+    max-width: 300px;
+    min-width: 130px;
+    margin-bottom: 30px;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 20px 55px;
+    margin: 10px;    
+}
+
+.play-with-friends{
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 950px){
+    .play-with-friends{
+        flex-direction: row;
+        margin-bottom: 0;
+    }
+
+    .play-with-friends > * {
+        flex-basis: 100%;        
+    }
+
+    .play-with-friends img{
+        display:block; 
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .play-with-friends p{
+        font-size: 2rem !important;
+    }
+    .play-book-on-site{
+        font-size: 2rem;
+        margin: 0px 0px !important;
+        padding: 0px 0px;
+        
+    }
+
+    .play-reverse{
+        flex-direction: row-reverse;
+    }
+}
+
+.play-with-friends img{
+    width: 100%;  
+}
+
+.play-with-friends h2{
+    font-size: 3.2rem;
+    font-weight: 700;
+   
+}
+
+.play-with-friends p{
+    font-size: 2.4rem;
+    padding: 0em 1em;
+    font-weight: 400;
+}
+
+.play-book-on-site{
+    background-color: #E3170A;
+    color: white;
+    border-radius: 0.3rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 2.8rem;
+    padding: 2rem 5.2rem;
+    max-width: 250px;
+    text-decoration: none;
+    margin: 5rem 2rem 5rem;
+    display: block;    
     text-align: center;
 }
 
-.hackerman-card-figure{
-    display: flex;    
+@media screen and (min-width: 950px){
+    .play-book-on-site{
+        font-size: 2rem;
+        padding: 1.5rem 1rem;
+        margin: 3rem 1rem 0rem;
+        max-width: 200px;        
+    }
+
+    .play-text{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}    
+
+.play-see-challenges{
+    background-color: #E3170A;
+    color: white;
+    border-radius: 0.3rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 2.8rem;
+    padding: 2rem 5.2rem;
+    max-width: 250px;
+    text-decoration: none;
+    margin: 5rem 2rem 9rem;
+    display: block;    
+    text-align: center;
 }
 
-.little-hacker{
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    display:flex;
-    width: 100%;
-    height: 100%px;;
-    margin-left:52px;
-    margin-bottom: 50px;
-    overflow: scroll;
+footer {
+
+    background-color: #011827;
+    color: white;
+    font-size: 18px;
+    width: 100%;    
+    text-decoration: none;
+    padding: 25px 0;
+    justify-items: center;
 }
 
-*/
+@media screen and (min-width: 950px){
+    .footer-container{
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-evenly;
+    }
 
+    .footer-info{
+        width: 40%;
+       
+    }
+    
+}
+
+.footer-info{
+    margin-left: 15px;
+    
+}
+
+footer a{
+    display:block;
+    text-decoration: none;
+    color:white;
+}
+
+footer a:nth-child(4){
+    padding-bottom: 1.8rem;
+}
+
+footer h3,h4,h5{
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom:0.7rem;
+}
+
+
+
+.footer-site-map{
+    margin-left:15px;
+    padding-bottom:1.5rem;
+}
+
+.footer-follow{
+    margin-left: 15px;   
+}

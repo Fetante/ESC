@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title>Escape Room</title>
+        <title>Book an Hacker Escape Room</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,6 +11,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap" rel="stylesheet">
     </head> 
     <body>
+        <div class="frost"></div>
         <div class="container">
             <header class="header">
                 <div class="header-banner">
@@ -21,43 +22,60 @@
                 </div>
                 
                 <nav class="header-nav">
-                    <figure class="header-menu">
-                        <img class="header-menu__figure" src="img/Line 1.jpg" alt="menu line 1">
-                        <img class="header-menu__figure" src="img/Line 1.jpg" alt="menu line 2">
-                        <img class="header-menu__figure" src="img/Line 1.jpg" alt="menu line 3">
-                    </figure>
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
                 </nav>
                 <div class="link-wrapper">
                     <ul class="header-links">
-                        <li><a href=""></a>Play Online</li>
-                        <li><a href=""></a>Play on-site</li>
-                        <li><a href=""></a>The story</li>
-                        <li><a href=""></a>Contact us</li>
+                        <li><a class="nav-link" href="#">Play Online</a></li>
+                        <li><a class="nav-link" href="#">Play on-site</a></li>
+                        <li><a class="nav-link" href="#">The story</a></li>
+                        <li><a class="nav-link" href="#">Contact us</a></li>
                     </ul>
                 </div>
                 
             </header>
             <!-- header and navbar end -->
-            <!-- main begins -->
-            <div class="main">
-                <div class="main-figure">
+            <!-- main content begins -->
+            <main>              
+                <section class="main-figure">
                     <figure>
                         <img class="hacker-main" src="img/hackerman.jpg" alt="A hacker sitting in a dark room full of computers">
                     </figure>
-                </div>
-                <div class="challenges">
+                </section>
+                <section class="challenges">
                         <a class="site-challenges" href="">On-site challenges</a>
                         <a class="online-challenges" href="">Online challenges</a>
-                    </div>
-                </div>
-                <div class="quote">
-                    <img class="photo-img" src="img/photo.jpg" alt="Photo of John Doe">
-                    <blockquote class="quote-john-doe">This is a quote about how amazing this place is and how much fun me and my 
-                        friends had when we tried it</blockquote>
-                    
-                </div>
-                <p class="person-quote">John Doe, visited us in September 2021</p>
+                </section>
 
+                <section class="quotes">
+                    <div class="quote">
+                        <img class="photo-img" src="img/photo.jpg" alt="Photo of John Doe">
+                        <div class="block-quote">
+                            <blockquote class="quote-john-doe">
+                                This is a quote about how amazing this place is and how much fun me and my 
+                                friends had when we tried it
+                            </blockquote>
+                            <p class="person-quote">John Doe, visited us in September 2021</p>
+                        </div>
+                    </div>
+                    
+
+                    <div class="quote">
+                        <img class="photo-img" src="img/photo.jpg" alt="Photo of John Doe">
+                        <div class="block-quote">
+                            <blockquote class="quote-john-doe">
+                                This is a quote about how amazing this place is and how much fun me and my 
+                                friends had when we tried it
+                            </blockquote>
+                            <p class="person-quote">John Doe, visited us in September 2021</p>
+                        </div>          
+                    </div>
+                    
+                </section>
                 <section class="pop-challenges">
                     <h2>Popular challenges right now</h2>
                     <div class="pop-cards-container">
@@ -112,22 +130,84 @@
                             <p class="card-description">Praeterea, ex culpa non invenies unum aut non accusatus unum. Et nihil inuitam. Nemo nocere tibi erit, et non inimicos, et</p>
                             <a class="pop-card-book" href="">
                                 <button class="pop-card-btn">Book this room</button>
-                            </a>
-                            
-                        </div>
-                        
+                            </a>                            
+                        </div>                        
                     </div>
                 </section>
+                <section class="challenges">
+                    <a class="site-challenges-lower" href="">On-site challenges</a>
+                    <a class="online-challenges-lower" href="">Online challenges</a>
+                </section>
+                <section class="story">
+                    <p>
+                        Quodsi haberent magnalia inter potentiam er divitias, et non illam quidem haec eo spectant haec quoque vos omnino desit illud quo solo felicitatis libertatisque perficiuntur.
+                    </p>
+                    <a href="#">Read the full story</a>
+                </section>
                 
-                       
-                  
+                <section class="play-with-friends">
+                    <div>
+                        <figure>
+                            <img src="/img/makers.jpg" alt="Two developers having a conversation in front of a screen">
+                        </figure>
+                    </div>
+                    <div class="play-text">
+                        <h2>Play with your friends or build your team stronger at work</h2>
+                        <p>Praetera , ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam. Nemo nocere tibi erit, et non inimicos, et </p>
+                        <a class="play-book-on-site" href="">Book on-site today</a>   
+                    </div>
+                </section> 
 
-
+                <section class="play-with-friends play-reverse">
+                    <div>
+                        <figure>
+                            <img src="img/kelly.jpg" alt="Developer staring at a screen">
+                        </figure>
+                    </div>
+                
+                    <div class="play-text">
+                        <h2>
+                            Play online or visit out venue for one of our 25 escape rooms
+                        </h2>
+                        <p>
+                            Praetera, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam. Nemo nocere tibi erit, et non inimicos, et
+                        </p>
+                        <a class="play-book-on-site" href="#">See all challenges</a>
+                    </div>
+                </section>                
+            </main>             
+                
             <!-- main ends -->
             <!-- footer begins -->
             <footer class="site-footer">
-
+                <div class="footer-container">
+                    <div class="footer-info">
+                        <h3>
+                            [Esc] Hacker Escape Rooms
+                        </h3>
+                        <p> Quodsi haberent magnalia inter potentiam er divitias, et non illam quidem haex eo spectant haec quoque vos omnino desit illud 
+                        quo solo felicitatis libertatisque perficiuntur.
+                        </p>
+                    </div>
+                    <div class="footer-site-map">
+                        <h4>Site map</h3>
+                        <a href="#">The Story</a>
+                        <a href="#">Contact Us</a> 
+                        <a href="#">Legal</a>
+                        
+                        <a href="#">Play online</a>
+                        <a href="">Play on-site</a>
+                    
+                    </div>
+                    <div class="footer-follow">
+                        <h5>Follow us on</h3>
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter</a>
+                </div>              
             </footer>
+            
         </div>
+        <script src='main.js'></script>
     </body>
 </html>
